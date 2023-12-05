@@ -1,0 +1,32 @@
+{
+	"name": "blank-project",
+	"private": true,
+	"version": "0.0.0",
+	"scripts": {
+		"local": "vite",
+		"svg:optmize": "svgo -f ./src/icons/eea-outline -o ./src/icons/eea-outline",
+		"svg:to-font": "svgtofont --sources ./src/icons/eea-outline --output ./src/fonts/eea-outline",
+		"svg:all": "npm run svg:optmize && npm run svg:to-font"
+	},
+	"svgtofont": {
+		"fontName": "eea-outline",
+		"website": false,
+		"outSVGReact": false,
+		"css": {
+			"output": "./src",
+			"fileName": "eea-outline-icon",
+			"include": "\\.(css)$",
+			"cssPath": "./fonts/eea-outline/"
+		}
+	},
+	"devDependencies": {
+		"path-that-svg": "^1.2.4",
+		"svgo": "^2.8.0",
+		"svgtofont": "^3.17.6",
+		"typescript": "^4.5.4",
+		"vite": "^2.8.0"
+	},
+	"dependencies": {
+		"cwco": "^1.5.5"
+	}
+}
